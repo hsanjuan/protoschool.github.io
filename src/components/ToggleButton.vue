@@ -4,7 +4,7 @@
   class="flex flex-row items-center"
   :for="computedId"
   tabindex="0"
-  @keydown.space.prevent="keyToggle"
+  @keydown.space.enter.prevent="keyToggle"
 >
   <span class="external-label-left fw5" v-if="label">{{label}}</span>
   <div class="dib">
@@ -16,6 +16,7 @@
       :disabled="disabled"
       @change.stop="toggle"
       :id="computedId"
+      tabindex="-1"
     >
     <div
       class="v-switch-core"
